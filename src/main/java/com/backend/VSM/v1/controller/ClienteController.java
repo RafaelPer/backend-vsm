@@ -30,7 +30,7 @@ public class ClienteController {
     public List<Cliente> buscarClientes(HttpServletResponse response) {
         response.addHeader("Access-Control-Allow-Credencials", "true");
         response.addHeader("Access-Control-Allow-Origin", "*");
-        response.addHeader("Access-Control-Allow-Methods", "GET,OPTIONS,PATCH,DELETE,POST,PUT");
+        response.addHeader("Access-Control-Allow-Methods", "*");
         response.addHeader("Access-Control-Allow-Headers", "*");
         return cliService.getClientes();
     }
@@ -39,7 +39,7 @@ public class ClienteController {
     public List<Cliente> buscarClientesAtivados(HttpServletResponse response) {
         response.addHeader("Access-Control-Allow-Credencials", "true");
         response.addHeader("Access-Control-Allow-Origin", "*");
-        response.addHeader("Access-Control-Allow-Methods", "GET,OPTIONS,PATCH,DELETE,POST,PUT");
+        response.addHeader("Access-Control-Allow-Methods", "*");
         response.addHeader("Access-Control-Allow-Headers", "*");
         return cliService.getClientesAtivados();
     }
@@ -48,7 +48,7 @@ public class ClienteController {
     public Cliente buscarClienteByIdAndClienteAtivado(@PathVariable(value = "clientId") Long id, HttpServletResponse response) {
         response.addHeader("Access-Control-Allow-Credencials", "true");
         response.addHeader("Access-Control-Allow-Origin", "*");
-        response.addHeader("Access-Control-Allow-Methods", "GET,OPTIONS,PATCH,DELETE,POST,PUT");
+        response.addHeader("Access-Control-Allow-Methods", "*");
         response.addHeader("Access-Control-Allow-Headers", "*");
         return cliService.getClienteByIdAndClienteAtivado(id);
     }
@@ -57,7 +57,7 @@ public class ClienteController {
     public Cliente buscarClienteByCpfCnpjAndClienteAtivado(@PathVariable(value = "clienteCpfCnpj") String cpfCnpj, HttpServletResponse response) {
         response.addHeader("Access-Control-Allow-Credencials", "true");
         response.addHeader("Access-Control-Allow-Origin", "*");
-        response.addHeader("Access-Control-Allow-Methods", "GET,OPTIONS,PATCH,DELETE,POST,PUT");
+        response.addHeader("Access-Control-Allow-Methods", "*");
         response.addHeader("Access-Control-Allow-Headers", "*");
         System.out.println(cpfCnpj);
     	return cliService.getClienteByCpfCnpjAndClienteAtivado(cpfCnpj);
@@ -77,7 +77,7 @@ public class ClienteController {
     	System.out.println(cli.isClienteDesativado());
         response.addHeader("Access-Control-Allow-Credencials", "true");
         response.addHeader("Access-Control-Allow-Origin", "*");
-        response.addHeader("Access-Control-Allow-Methods", "GET,OPTIONS,PATCH,DELETE,POST,PUT");
+        response.addHeader("Access-Control-Allow-Methods", "*");
         response.addHeader("Access-Control-Allow-Headers", "*");
         return cliService.createCliente(cli);
     }
@@ -86,7 +86,7 @@ public class ClienteController {
     public Cliente atualizarClienteById(@PathVariable(value = "cliId") Long id, @RequestBody Cliente clienteBody, HttpServletResponse response) {
         response.addHeader("Access-Control-Allow-Credencials", "true");
         response.addHeader("Access-Control-Allow-Origin", "*");
-        response.addHeader("Access-Control-Allow-Methods", "GET,OPTIONS,PATCH,DELETE,POST,PUT");
+        response.addHeader("Access-Control-Allow-Methods", "*");
         response.addHeader("Access-Control-Allow-Headers", "*");
         return cliService.updateClienteById(id, clienteBody);
     }
@@ -109,7 +109,7 @@ public class ClienteController {
     	
         response.addHeader("Access-Control-Allow-Credencials", "true");
         response.addHeader("Access-Control-Allow-Origin", "*");
-        response.addHeader("Access-Control-Allow-Methods", "GET,OPTIONS,PATCH,DELETE,POST,PUT");
+        response.addHeader("Access-Control-Allow-Methods", "*");
         response.addHeader("Access-Control-Allow-Headers", "*");
     	
     	return cliService.alterStatusClienteById(id, isDesactive);

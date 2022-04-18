@@ -28,7 +28,7 @@ public class CidadeController {
     public List<Cidade> buscarCidades(HttpServletResponse response) {
         response.addHeader("Access-Control-Allow-Credencials", "true");
         response.addHeader("Access-Control-Allow-Origin", "*");
-        response.addHeader("Access-Control-Allow-Methods", "GET,OPTIONS,PATCH,DELETE,POST,PUT");
+        response.addHeader("Access-Control-Allow-Methods", "*");
         response.addHeader("Access-Control-Allow-Headers", "*");
         return cidService.getCidades();
     }
@@ -37,7 +37,7 @@ public class CidadeController {
     public List<Cidade> buscarCidadesAtivadas(HttpServletResponse response) {
         response.addHeader("Access-Control-Allow-Credencials", "true");
         response.addHeader("Access-Control-Allow-Origin", "*");
-        response.addHeader("Access-Control-Allow-Methods", "GET,OPTIONS,PATCH,DELETE,POST,PUT");
+        response.addHeader("Access-Control-Allow-Methods", "*");
         response.addHeader("Access-Control-Allow-Headers", "*");
         return cidService.getCidadesAtivadas();
     }
@@ -46,7 +46,7 @@ public class CidadeController {
     public Cidade buscarCidadeByIdAndCidadeAtivado(@PathVariable(value = "cidId") Long id, HttpServletResponse response) {
         response.addHeader("Access-Control-Allow-Credencials", "true");
         response.addHeader("Access-Control-Allow-Origin", "*");
-        response.addHeader("Access-Control-Allow-Methods", "GET,OPTIONS,PATCH,DELETE,POST,PUT");
+        response.addHeader("Access-Control-Allow-Methods", "*");
         response.addHeader("Access-Control-Allow-Headers", "*");
         return cidService.getCidadeByIdAndCidadeAtivada(id);
     }
@@ -55,7 +55,7 @@ public class CidadeController {
     public Cidade criarCidade(@RequestBody Cidade cid, HttpServletResponse response) {
         response.addHeader("Access-Control-Allow-Credencials", "true");
         response.addHeader("Access-Control-Allow-Origin", "*");
-        response.addHeader("Access-Control-Allow-Methods", "GET,OPTIONS,PATCH,DELETE,POST,PUT");
+        response.addHeader("Access-Control-Allow-Methods", "*");
         response.addHeader("Access-Control-Allow-Headers", "*");
     	
 		System.out.println(cid.getCidadeIdPk());
@@ -69,8 +69,8 @@ public class CidadeController {
     @RequestMapping(value="/updateCidadeById/{cidId}", method=RequestMethod.PUT)
     public Cidade atualizarCidadeById(@PathVariable(value = "cidId") Long id, @RequestBody Cidade cidadeBody, HttpServletResponse response) {
         response.addHeader("Access-Control-Allow-Credencials", "true");
-        response.addHeader("Access-Control-Allow-Origin", "*");
-        response.addHeader("Access-Control-Allow-Methods", "GET,OPTIONS,PATCH,DELETE,POST,PUT");
+        response.addHeader("Access-Control-Allow-Origin", "http://localhost:4200/");
+        response.addHeader("Access-Control-Allow-Methods", "*");
         response.addHeader("Access-Control-Allow-Headers", "*");
         return cidService.updateCidadeById(id, cidadeBody);
     }
@@ -79,7 +79,7 @@ public class CidadeController {
     public Cidade alterarStatusCidadeById(@PathVariable(value = "cidId") Long id, @RequestBody String body, HttpServletResponse response) {
         response.addHeader("Access-Control-Allow-Credencials", "true");
         response.addHeader("Access-Control-Allow-Origin", "*");
-        response.addHeader("Access-Control-Allow-Methods", "GET,OPTIONS,PATCH,DELETE,POST,PUT");
+        response.addHeader("Access-Control-Allow-Methods", "*");
         response.addHeader("Access-Control-Allow-Headers", "*");
     	System.out.println(body);
     	
